@@ -8,6 +8,9 @@ export class TodoRepositoryImpl implements TodoRepository {
     constructor(_datasource: TodoDataSource) {
         this.dataSource = _datasource;
     }
+    async createTodo(todo: Todo): Promise<void> {
+        return this.dataSource.createTodo(todo)
+    }
 
     async getTodos(): Promise<Todo[]> {
         return this.dataSource.getTodos();
