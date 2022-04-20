@@ -1,12 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import TodoListView from './todo/todo-list-view'
+import TodoListView from './todo/todo-list'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <TodoListView />
-    </div>
+    <TodoListView />
   )
 }
