@@ -5,7 +5,7 @@ import {
     Box,
     Button,
     Container,
-    FormControl, FormHelperText, IconButton, Input, InputLabel, TextField, Toolbar, Typography
+    FormControl, FormGroup, FormHelperText, IconButton, Input, InputLabel, TextField, Toolbar, Typography
 } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useRouter } from 'next/router'
@@ -40,10 +40,13 @@ export default function TodoListView() {
                     }}>Save</Button>
                 </Toolbar>
             </AppBar>
-            <Container>
+            <Container style={{ marginTop: 20 }}>
                 <FormControl>
-                    <Input value={title} placeholder="Todo" onChange={e => onChange(e.target.value)} />
+                    <InputLabel htmlFor="my-input">Title</InputLabel>
+                    <Input value={title} id="my-input" aria-describedby="my-helper-text" onChange={e => onChange(e.target.value)} />
+                    <FormHelperText id="my-helper-text">New Todo Title</FormHelperText>
                 </FormControl>
+
             </Container>
         </Box>
     );
